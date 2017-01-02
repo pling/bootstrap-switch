@@ -335,8 +335,8 @@ do ($ = window.jQuery, window) ->
       @_handleWidth = @$on.outerWidth()
       @_labelWidth = @$label.outerWidth()
 
-      # set container and wrapper widths
-      @$container.width (@_handleWidth * 2) + @_labelWidth
+      # set container and wrapper widths - bugfix for jquery 3.x
+      @$container.width (@_handleWidth * 2) + @_labelWidth + 0.03
       @$wrapper.width @_handleWidth + @_labelWidth
 
     _containerPosition: (state = @options.state, callback) ->
